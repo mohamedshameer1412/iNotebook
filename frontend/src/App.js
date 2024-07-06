@@ -9,7 +9,7 @@ import Signup from "./components/Signup";
 import './App.css'
 import '.'
 const App = () => {
-  const apiUrl = "https://i-notebook-six.vercel.app/"
+  const apiUrl = "https://i-notebook-six.vercel.app"
   console.log(apiUrl)
   const [alert, setAlert] = useState(null);
   const showAlert = (message, type) => {
