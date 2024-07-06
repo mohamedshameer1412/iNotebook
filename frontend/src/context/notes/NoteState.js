@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import NoteContext from "./noteContext";
 
 const NoteState = props => {
-  const host = process.env.REACT_APP_API_BASE_URL;
+  const host ="https://i-notebook-six.vercel.app";
   const notesInitial = [];
 
   const [notes, setNotes] = useState(notesInitial);

@@ -9,7 +9,8 @@ import Signup from "./components/Signup";
 import './App.css'
 import '.'
 const App = () => {
-  const apiUrl = process.env.REACT_APP_API_BASE_URL
+  const apiUrl = "https://i-notebook-six.vercel.app"
+  console.log(apiUrl)
   const [alert, setAlert] = useState(null);
   const showAlert = (message, type) => {
     setAlert({
