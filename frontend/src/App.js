@@ -10,6 +10,7 @@ import './App.css'
 import '.'
 const App = () => {
   const apiUrl = "https://i-notebook-olive.vercel.app/"
+  console.log(apiUrl)
   const [alert, setAlert] = useState(null);
   const showAlert = (message, type) => {
     setAlert({
