@@ -1,0 +1,139 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  border: none;
+}
+
+body {
+  background: #f5f8f1;
+  background-image: radial-gradient(#bfc0c1 7.2%, transparent 0);
+  background-size: 25px 25px;
+  background-attachment: fixed;
+}
+
+.iNotebook {
+  text-transform: none;
+}
+
+/* Navbar */
+
+header {
+  padding-top: 0%;
+}
+
+.navbar-brand {
+  font-size: x-large;
+  font-weight: 500;
+}
+
+.nav-item {
+  font-size: 18px;
+}
+
+.navbar--logo {
+  height: 40px;
+  width: 40px;
+  border-radius: 50px;
+}
+
+i {
+  cursor: pointer;
+}
+
+/* Sign in */
+.passwordMatching {
+  font-weight: bold;
+  color: red;
+}
+
+/* Login and Sign */
+
+.redirect {
+  font-size: medium;
+  color: black;
+  font-weight: 400;
+}
+
+.login--container,
+.signup--container {
+  background-color: #f0f8ff;
+  padding: 80px 12px 80px;
+  border-radius: 10px;
+  box-shadow: 7px 5px 12px rgb(66, 66, 66);
+}
+
+.redirect--link {
+  text-decoration: none;
+  color: blue;
+  font-weight: bold;
+}
+
+.signup--btn,
+.login--btn,
+.addnote--btn,
+.updatenote--btn {
+  height: 54px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.signup--heading,
+.login--heading {
+  font-size: 35px;
+  font-weight: 700;
+  text-transform: none;
+  color: #212529;
+  font-family: "Times New Roman", Times, serif;
+}
+
+/* Alert */
+
+.alert--component {
+  height: 50px;
+}
+
+/* Notes Page */
+
+.notes--title {
+  font-size: 35px;
+  font-weight: 800;
+  text-align: center;
+  text-transform: none;
+  text-decoration: underline;
+  color: #212529;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.notes--field {
+  font-size: 18px;
+}
+
+/* Note card  */
+
+.card {
+  border: none;
+}
+
+
+.card {
+  -webkit-box-shadow: 10px 10px 32px -5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 32px -5px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 32px -5px rgba(0, 0, 0, 0.75) !important;
+}
+
+.card:hover,
+.card:focus {
+  background: #dcdee0 !important;
+  transform: translateY(4px) !important;
+}
+
+
+.addnote {
+  padding: 1%;
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(0.5px);
+  -webkit-backdrop-filter: blur(0.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
