@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const mongoURI = process.env.MONGO_URI
 // console.log(mongoURI)
 
-const connectToMongo = () => {
+const connectToMongo = async () => {
     mongoose.connect(mongoURI);
 
     mongoose.connection.once('open', () => {

@@ -3,21 +3,21 @@ const connectToMongo = require('./db');
 const express = require('express')
 var cors = require('cors') 
 
-connectToMongo();
+await connectToMongo();
 const app = express()
 const port = process.env.PORT || 5000
 
 app.use(cors())
 app.use(express.json())
 
-app.get('/', (req, res) => {
+app.get('/', async(req, res) => {
   res.send('Hello, Vercel!');
 });
 // Available Routes
-app.use('/api/auth', require('./routes/auth'))
+app.use('/api/auth',  require('./routes/auth'))
 app.use('/api/notes', require('./routes/notes'))
 
 
-app.listen(port, () => {
+app.listen(port, async() => {
   console.log(`iNotebook backend listening at http://localhost:${port}`)
 })
