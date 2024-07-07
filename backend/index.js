@@ -9,11 +9,13 @@ const corsConfig = {
   methods:["GET","POST","PUT","DELETE"],
 };
 
+
+const app = express()
+
 app.options("",cors(corsConfig));
 app.use(cors(corsConfig));
 connectToMongo();
 
-const app = express()
 const port = process.env.PORT || 5000
 
 app.use(express.json())
