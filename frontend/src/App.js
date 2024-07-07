@@ -9,7 +9,7 @@ import Signup from "./components/Signup";
 import './App.css'
 import '.'
 const App = () => {
-  const apiUrl = "https://inotebook-backend-bay.vercel.app";
+  const apiUrl = process.env.REACT_APP_API_BASE_URL;
   console.log(apiUrl)
   const [alert, setAlert] = useState(null);
   const showAlert = (message, type) => {
