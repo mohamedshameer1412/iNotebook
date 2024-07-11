@@ -1,10 +1,10 @@
 import Notes from "./Notes"
 
-const Home = () => {
+const Home = (props) => {
 
     return (
         <div className="container"> 
-            <Notes/>
+            <Notes searchQuery={props.searchQuery} setSearchQuery={props.setSearchQuery}/>
         </div>
     )
 }

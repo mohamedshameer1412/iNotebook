@@ -63,7 +63,7 @@ router.post(
       };
 
       //this is the method to generate the auth token using our secret string
-      const authtoken = jwt.sign(data, JWT_SECRET);
+      const authtoken = jwt.sign(data, JWT_SECRET,{ expiresIn: '1h' });
 
       success = true;
       res.json({ success, authtoken });
@@ -146,4 +146,22 @@ router.post("/getuser", fetchuser, async (req, res) => {
   }
 });
 
+// router.get('/verify', authController.verifyToken);
+
+
+
+// exports.verifyToken = (req, res, next) => {
+//   const token = req.headers['authorization'];
+//   if (!token) return res.status(401).send('Access Denied');
+//   try {
+//     const verified = jwt.verify(token, process.env.JWT_SECRET);
+//     req.user = verified;
+//     next();
+//   } catch (error) {
+//     res.status(400).send('Invalid Token');
+//   }
+// };
+
 module.exports = router;
+
+

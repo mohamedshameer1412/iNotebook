@@ -51,8 +51,8 @@ const NoteState = props => {
         "auth-token": localStorage.getItem("token"),
       },
     });
-    const json = response.json();
-    console.log(json);
+    response.json();
+    // console.log(json);
 
     //return only those notes whose id does not match with the given id
     const newNotes = notes.filter(note => {
@@ -73,8 +73,8 @@ const NoteState = props => {
       },
       body: JSON.stringify({title, description, tag}),
     });
-    const json = await response.json();
-    console.log(json);
+    await response.json();
+    // console.log(json);
 
     let newNotes = JSON.parse(JSON.stringify(notes));
     // Logic to edit in client
