@@ -16,7 +16,7 @@ const JWT_SECRET = "shameer$oy";
 
 router.get('/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
 
-router.get('/google/callback', passport.authenticate('google', { failureRedirect: 'http://localhost:3000' }), async (req, res) => {
+router.get('/google/callback', passport.authenticate('google', { failureRedirect: `${process.env.FRONTEND_URL}` }), async (req, res) => {
   try {
     const { user } = req;
     const data = {
@@ -28,7 +28,7 @@ router.get('/google/callback', passport.authenticate('google', { failureRedirect
     const authtoken = jwt.sign( data, JWT_SECRET, { expiresIn: '1h' });
 
     // Redirect with token as a query parameter
-    res.redirect(`http://localhost:3000?authtoken=${authtoken}`);
+    res.redirect(`${process.env.FRONTEND_URL}?authtoken=${authtoken}`);
 
   } catch (error) {
     console.error(error);
