@@ -16,7 +16,7 @@ const JWT_SECRET = "shameer$oy";
 
 router.get('/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
 
-router.get('/google/callback', passport.authenticate('google', { failureRedirect: `${process.env.FRONTEND_URL}` }), async (req, res) => {
+router.get('/google/callback', passport.authenticate('google', { failureRedirect: process.env.FRONTEND_URL }), async (req, res) => {
   try {
     const { user } = req;
     const data = {
