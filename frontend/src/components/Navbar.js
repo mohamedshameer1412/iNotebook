@@ -31,7 +31,7 @@ const Navbar = (props) => {
                             <span className="navbar-toggler-icon"></span>
                         </button>
                         {/* Searchbar  */}
-                        {!localStorage.getItem("token") ?
+                        {localStorage.getItem("token") ?
                         <form className="mx-md-5 mx-2 my-2 search-bar" role="search">
                             <div className="input-group">
                                 <input type="text" className="search form-control" placeholder="Search" value={props.searchQuery}
