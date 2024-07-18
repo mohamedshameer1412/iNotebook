@@ -5,6 +5,7 @@ const GoogleAuth = (props) => {
 
     const urlParams = new URLSearchParams(window.location.search);
     const authToken = urlParams.get('authtoken');
+    const errval = urlParams.get('errval');
     if (authToken) {
       // Store the token in local storage
       // console.log(props);
@@ -13,9 +14,11 @@ const GoogleAuth = (props) => {
       props.showAlert("Login Successful", "success");
       window.location.href = "/";
     } 
-    else{
-      props.showAlert("Invalid Credentials", "danger");
+    if(errval){
+        props.showAlert("Invalid Credentials", "danger");
     }
+    // else{
+    // }
   }, [props]);
 
   const handleGoogleLogin = () => {

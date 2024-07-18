@@ -32,7 +32,8 @@ router.get('/google/callback', passport.authenticate('google', { failureRedirect
 
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: 'Internal Server Error' });
+    const errval = 'Internal Server Error'
+    res.redirect(`${process.env.FRONTEND_URL}?error=${errval}`);
   }
 });
 
