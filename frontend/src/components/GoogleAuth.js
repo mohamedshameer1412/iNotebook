@@ -4,6 +4,7 @@ const GoogleAuth = (props) => {
   useEffect(() => {
 
     const urlParams = new URLSearchParams(window.location.search);
+    console.log(urlParams);
     const authToken = urlParams.get('authtoken');
     if (authToken) {
       // Store the token in local storage
