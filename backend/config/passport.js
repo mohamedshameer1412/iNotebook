@@ -32,7 +32,7 @@ passport.use(new GoogleStrategy({
         }
         done(null, user);
     } catch (err) {
-        res.status(500).json({ error: 'Internal Server Error' });
+        done(err, null);
     }
 }));
   
