@@ -22,7 +22,12 @@ passport.use(new GoogleStrategy({
     callbackURL: '/auth/google/callback'
 }, async (token, tokenSecret, profile, done) => {
     try {
-        let user = await User.findOne({ googleId: profile.id });
+        let user = await User.findOne({
+            $or: [
+                { googleId: profile.id },
+                { email: profile.emails[0].value }
+            ]
+        });
         if (!user) {
             user = new User({
                 googleId: profile.id,
@@ -35,6 +40,6 @@ passport.use(new GoogleStrategy({
         done(err, null);
     }
 }));
-  
+
 
 module.exports = passport;
