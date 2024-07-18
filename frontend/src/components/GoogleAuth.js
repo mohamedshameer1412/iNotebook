@@ -13,6 +13,9 @@ const GoogleAuth = (props) => {
       props.showAlert("Login Successful", "success");
       window.location.href = "/";
     } 
+    else{
+      props.showAlert("Invalid Credentials", "danger");
+    }
   }, [props]);
 
   const handleGoogleLogin = () => {

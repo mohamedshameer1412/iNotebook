@@ -22,12 +22,7 @@ passport.use(new GoogleStrategy({
     callbackURL: '/auth/google/callback'
 }, async (token, tokenSecret, profile, done) => {
     try {
-        let user = await User.findOne({
-            $or: [
-                { googleId: profile.id },
-                { email: profile.emails[0].value }
-            ]
-        });
+        let user = await User.findOne({ googleId: profile.id });
         if (!user) {
             user = new User({
                 googleId: profile.id,
@@ -37,9 +32,9 @@ passport.use(new GoogleStrategy({
         }
         done(null, user);
     } catch (err) {
-        done(err, null);
+        res.status(500).json({ error: 'Internal Server Error' });
     }
 }));
-
+  
 
 module.exports = passport;
